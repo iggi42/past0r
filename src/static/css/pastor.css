@@ -1,0 +1,53 @@
+body, textarea {
+    background-color: white;
+    color: black;
+}
+
+textarea {
+    border: none;
+    heigth: 100%;
+    min-heigth: 400px;
+}
+
+
+.control {
+    float: right;
+    color: black;
+    margin: 10px;
+    background-color: white;
+    border: 3px solid black;
+}
+
+.base {
+    width: 100%;
+}
+
+.case {
+    min-width: 500px;
+    width: 48%;
+    paddign: 20px;
+    display: inline-block;
+    position: relative;
+    border: 3px solid black;
+    padding: 6px 12px 6px 12px;
+    margin: 10px;
+    float: inline-end;
+}
+
+
+#editor {
+    height: auto;
+    width: 100%;
+    font-family: monospace;
+    margin: 0px;
+    resize: none;
+    overflow: hidden;
+}
+
+#preview-case {
+    vertical-align: top;
+}
+
+#preview {
+    heigth: available;
+}

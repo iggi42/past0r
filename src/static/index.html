@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-eqiv="X-UAX-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="hardbin.com infused with asciidoc">
+        <meta name="author" content="Felix Krüger <fe.krueger@protonmail.com>">
+        <title>P4ST0R</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/pastor.css">
+        <scirpt type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/asciidoctor.min.js"></script>
+        <script type="text/javascript" src="js/pastor.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+         var app = Elm.Pastor.fullscreen();
+         var converter = Asciidoctor();
+
+         app.ports.adoc_in.subscribe(function(raw_adoc) {
+             var formatted = converter.$convert(raw_adoc);
+             app.ports.adoc_out.send(formatted);
+         });
+
+        </script>
+    </body>
+</html>
