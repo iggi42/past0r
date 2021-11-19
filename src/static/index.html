@@ -23,7 +23,37 @@
              var formatted = converter.$convert(raw_adoc);
              app.ports.adoc_out.send(formatted);
          });
-
         </script>
+
+        <script type="text/x-mathjax-config">
+         MathJax.Hub.Config({
+             tex2jax: {
+                 inlineMath: [["\\(", "\\)"]],
+                 displayMath: [["\\[", "\\]"]],
+                 ignoreClass: "nostem|nostem|nolatexmath"
+             },
+             asciimath2jax: {
+                 delimiters: [["\\$", "\\$"]],
+                 ignoreClass: "nostem|nostem|noasciimath"
+             },
+             Safe: {
+                 allow: {
+                     URLs: "safe",
+                     classes: "safe",
+                     cssIDs: "safe",
+                     styles: "safe",
+                     fontsize: "all",
+                     require: "safe"
+                 },
+                 safeProtocols: {
+                     http: true,
+                     https: true,
+                     file: false,
+                     javascript: false
+                 }
+             }
+         });
+        </script>
+        <script type="text/javascript" src="js/MathJax.js"></script>
     </body>
 </html>
